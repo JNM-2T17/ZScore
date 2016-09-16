@@ -11,6 +11,8 @@ public class MainActivity extends AppCompatActivity {
     private Button zScoreButton;
     private Button pValueTButton;
     private Button tScoreButton;
+    private Button pValueX2Button;
+    private Button x2Button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
         zScoreButton = (Button)findViewById(R.id.zScoreButton);
         pValueTButton = (Button)findViewById(R.id.pValueTButton);
         tScoreButton = (Button)findViewById(R.id.tScoreButton);
+        pValueX2Button = (Button)findViewById(R.id.pValueX2Button);
+        x2Button = (Button)findViewById(R.id.x2Button);
 
         pValueButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +53,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent kanga = new Intent(getBaseContext(),ComputeT.class);
+                startActivity(kanga);
+            }
+        });
+
+        pValueX2Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent kanga = new Intent(getBaseContext(),ComputePForX2.class);
+                startActivity(kanga);
+            }
+        });
+
+        x2Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent kanga = new Intent(getBaseContext(),ComputeX2.class);
                 startActivity(kanga);
             }
         });

@@ -16,29 +16,41 @@
         android:textSize="30dp"
         android:text="Probability Distribution Toolkit"
         android:textAlignment="center"
-        android:layout_margin="30px"/>
+        android:layout_margin="10px"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/pValueButton"
         android:text="Compute p-values (Normal)"
-        android:layout_margin="30px"/>
+        android:layout_margin="10px"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/zScoreButton"
         android:text="Compute z-scores"
-        android:layout_margin="30px"/>
+        android:layout_margin="10px"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/pValueTButton"
         android:text="Compute p-values (t-distribution)"
-        android:layout_margin="30px"/>
+        android:layout_margin="10px"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tScoreButton"
         android:text="Compute t-scores"
-        android:layout_margin="30px"/>
+        android:layout_margin="10px"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pValueX2Button"
+        android:text="Compute p-values (chi-square distribution)"
+        android:layout_margin="10px"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/x2Button"
+        android:text="Compute X2 values"
+        android:layout_margin="10px"/>
 </LinearLayout>
