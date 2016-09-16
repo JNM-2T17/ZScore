@@ -42,7 +42,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/pField"
         android:layout_below="@id/buttonGroup"
-        android:hint="P-Value"/>
+        android:hint="P-Value"
+        android:inputType="numberDecimal"/>
     <android.support.percent.PercentRelativeLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -50,14 +51,15 @@
         android:layout_below="@id/pField"
         android:id="@+id/inputPanel">
         <EditText
-            app:layout_widthPercent="75%"
+            app:layout_widthPercent="60%"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/dfField"
             android:layout_below="@id/pField"
-            android:hint="Degrees of Freedom"/>
+            android:hint="Degrees of Freedom"
+            android:inputType="number"/>
         <Button
-            app:layout_widthPercent="25%"
+            app:layout_widthPercent="40%"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/dfField"

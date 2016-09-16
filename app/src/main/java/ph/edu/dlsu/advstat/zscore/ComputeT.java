@@ -1,8 +1,7 @@
 package ph.edu.dlsu.advstat.zscore;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -75,9 +74,9 @@ public class ComputeT extends AppCompatActivity {
                             if( df < 1 ) {
                                 Toast.makeText(getBaseContext(),"Please input a non-negative integer for the degrees of freedom.",
                                         Toast.LENGTH_LONG).show();
-                            } else if( df < 3 ) {
-                                Toast.makeText(getBaseContext(),"df < 3 is not yet supported.",
-                                        Toast.LENGTH_LONG).show();
+//                            } else if( df < 3 ) {
+//                                Toast.makeText(getBaseContext(),"df < 3 is not yet supported.",
+//                                        Toast.LENGTH_LONG).show();
                             } else {
                                 double t = 0;
                                 switch (testType) {

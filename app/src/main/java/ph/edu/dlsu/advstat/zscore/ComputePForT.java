@@ -69,9 +69,9 @@ public class ComputePForT extends AppCompatActivity {
                         if( df < 1 ) {
                             Toast.makeText(getBaseContext(),"Please input a non-negative integer for the degrees of freedom.",
                                     Toast.LENGTH_LONG).show();
-                        } else if( df < 3 ) {
-                            Toast.makeText(getBaseContext(),"df < 3 is not yet supported.",
-                                    Toast.LENGTH_LONG).show();
+//                        } else if( df < 3 ) {
+//                            Toast.makeText(getBaseContext(),"df < 3 is not yet supported.",
+//                                    Toast.LENGTH_LONG).show();
                         } else {
                             double p = 0;
                             switch (testType) {

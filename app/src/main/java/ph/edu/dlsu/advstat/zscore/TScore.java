@@ -135,6 +135,14 @@ public class TScore {
     }
 
     private static double computeDensity(double t,double df) {
+        if( Math.abs(df - 1) < 0.0001) {
+            return 1.0 / (Math.PI * (1 + t * t));
+        } else if( Math.abs(df - 2) < 0.0001) {
+            return 1.0 / Math.pow(2 + t * t, 1.5);
+        } else if( Math.abs(df - 3) < 0.0001) {
+            return Math.sqrt(108.0) / (Math.PI * Math.pow(3 + t * t,2));
+        }
+
         if( Math.abs(gamma1) < 0.0001 ) {
             gamma1 = gamma((df + 1.0) / 2.0);
         }

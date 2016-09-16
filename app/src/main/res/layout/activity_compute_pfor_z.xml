@@ -44,14 +44,15 @@
         android:layout_below="@id/buttonGroup"
         android:id="@+id/inputPanel">
         <EditText
-            app:layout_widthPercent="75%"
+            app:layout_widthPercent="60%"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/zField"
+            android:inputType="numberDecimal"
             android:layout_below="@id/buttonGroup"
             android:hint="Z-Score"/>
         <Button
-            app:layout_widthPercent="25%"
+            app:layout_widthPercent="40%"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/zField"
