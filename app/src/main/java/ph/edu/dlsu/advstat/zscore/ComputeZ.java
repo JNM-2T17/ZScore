@@ -2,7 +2,6 @@ package ph.edu.dlsu.advstat.zscore;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -83,7 +82,7 @@ public class ComputeZ extends AppCompatActivity {
                                 Toast.makeText(getBaseContext(), "Invalid test type.",
                                         Toast.LENGTH_LONG).show();
                         }
-                        Log.i("ComputeZ:", "p = " + p + ", z = " + z);
+//                        Log.i("ComputeZ:", "p = " + p + ", z = " + z);
                         zLabel.setText(z + "");
                     }
                 } catch(NumberFormatException nfe) {

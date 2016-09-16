@@ -94,7 +94,7 @@ public class ComputeT extends AppCompatActivity {
                                         Toast.makeText(getBaseContext(), "Invalid test type.",
                                                 Toast.LENGTH_LONG).show();
                                 }
-                                Log.i("ComputeT:", "p = " + p + ", t = " + t);
+//                                Log.i("ComputeT:", "p = " + p + ", t = " + t);
                                 tLabel.setText(t + "");
                             }
                         } catch(NumberFormatException nfe) {
