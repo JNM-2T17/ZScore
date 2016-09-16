@@ -29,8 +29,14 @@
         <activity
             android:name=".ComputeT"
             android:screenOrientation="portrait" />
-        <activity android:name=".ComputePForX2" />
-        <activity android:name=".ComputeX2"></activity>
+        <activity android:name=".ComputePForX2"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ComputeX2"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ComputePForF"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ComputeF"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

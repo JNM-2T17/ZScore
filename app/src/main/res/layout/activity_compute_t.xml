@@ -15,7 +15,7 @@
         android:text="Compute T-Score"
         android:id="@+id/headerLabel"
         android:textAlignment="center"
-        android:textSize="28dp"/>
+        android:textSize="28sp"/>
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
             android:text="Two-Tailed Test"/>
     </RadioGroup>
     <EditText
-        android:layout_width="400px"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:id="@+id/pField"
         android:layout_below="@id/buttonGroup"
@@ -72,9 +72,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tLabel"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:layout_below="@id/inputPanel"
-        android:layout_margin="30px"
+        android:layout_margin="10dp"
         android:text="T-Score here"
         android:textAlignment="viewEnd"/>
 </RelativeLayout>

@@ -15,7 +15,7 @@
         android:text="Compute Z-Score"
         android:id="@+id/headerLabel"
         android:textAlignment="center"
-        android:textSize="28dp"/>
+        android:textSize="28sp"/>
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -64,10 +64,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:id="@+id/zLabel"
         android:layout_below="@id/inputPanel"
-        android:layout_margin="30px"
+        android:layout_margin="10dp"
         android:text="Z-Score here"
         android:textAlignment="viewEnd"/>
 </RelativeLayout>

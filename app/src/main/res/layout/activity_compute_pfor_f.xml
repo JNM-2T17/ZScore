@@ -8,58 +8,64 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="ph.edu.dlsu.advstat.zscore.ComputePForZ">
+    tools:context="ph.edu.dlsu.advstat.zscore.ComputePForF">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Compute P-Values(Normal)"
+        android:text="Compute P-Values"
         android:id="@+id/headerLabel"
         android:textAlignment="center"
         android:textSize="28sp"/>
-    <RadioGroup
-        android:layout_width="wrap_content"
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonGroup"
-        android:layout_below="@id/headerLabel">
-        <RadioButton
+        android:textAlignment="center"
+        android:text="(F-distribution)"
+        android:id="@+id/distLabel"
+        android:textSize="25sp"
+        android:layout_below="@id/headerLabel"/>
+    <android.support.percent.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/inputPanel1"
+        android:layout_below="@id/distLabel">
+        <EditText
+            app:layout_widthPercent="50%"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/leftTailRadio"
-            android:text="Left-Tailed Test"/>
-        <RadioButton
+            android:id="@+id/fField"
+            android:hint="F-Value"
+            android:inputType="numberDecimal"/>
+        <EditText
+            app:layout_widthPercent="50%"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/rightTailRadio"
-            android:text="Right-Tailed Test"/>
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/twoTailRadio"
-            android:text="Two-Tailed Test"/>
-    </RadioGroup>
+            android:id="@+id/df1Field"
+            android:layout_toRightOf="@id/fField"
+            android:hint="df Numerator"
+            android:inputType="number"/>
+    </android.support.percent.PercentRelativeLayout>
     <android.support.percent.PercentRelativeLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/buttonGroup"
+        android:layout_below="@id/inputPanel1"
         android:id="@+id/inputPanel">
         <EditText
             app:layout_widthPercent="60%"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/zField"
-            android:inputType="numberSigned|numberDecimal"
-            android:layout_below="@id/buttonGroup"
-            android:hint="Z-Score"/>
+            android:id="@+id/df2Field"
+            android:hint="df Denominator"
+            android:inputType="number"/>
         <Button
             app:layout_widthPercent="40%"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/zField"
-            android:layout_toRightOf="@id/zField"
+            android:layout_toEndOf="@id/df2Field"
+            android:layout_toRightOf="@id/df2Field"
             android:id="@+id/computeButton"
-            android:text="Compute P-Value"
-            android:layout_below="@id/buttonGroup"/>
+            android:text="Compute P-Value"/>
     </android.support.percent.PercentRelativeLayout>
     <TextView
         android:layout_width="match_parent"

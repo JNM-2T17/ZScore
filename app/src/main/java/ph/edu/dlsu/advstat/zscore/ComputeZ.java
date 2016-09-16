@@ -83,7 +83,7 @@ public class ComputeZ extends AppCompatActivity {
                                         Toast.LENGTH_LONG).show();
                         }
 //                        Log.i("ComputeZ:", "p = " + p + ", z = " + z);
-                        zLabel.setText(z + "");
+                        zLabel.setText(z + "" + (testType == TWO_TAIL ? -z : ""));
                     }
                 } catch(NumberFormatException nfe) {
                     Toast.makeText(getBaseContext(),"Please input a number between 0 and 1.",
