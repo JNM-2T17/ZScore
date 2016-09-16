@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="ph.edu.dlsu.advstat.zscore.ComputePForT">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Compute P-Values"
+        android:id="@+id/headerLabel"
+        android:textAlignment="center"
+        android:textSize="28dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="(t-distribution)"
+        android:id="@+id/distLabel"
+        android:textSize="25dp"
+        android:layout_below="@id/headerLabel"/>
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonGroup"
+        android:layout_below="@id/distLabel">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/leftTailRadio"
+            android:text="Left-Tailed Test"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rightTailRadio"
+            android:text="Right-Tailed Test"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/twoTailRadio"
+            android:text="Two-Tailed Test"/>
+    </RadioGroup>
+    <EditText
+        android:layout_width="400px"
+        android:layout_height="wrap_content"
+        android:id="@+id/tField"
+        android:layout_below="@id/buttonGroup"
+        android:hint="T-Score"/>
+    <android.support.percent.PercentRelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tField"
+        android:id="@+id/inputPanel">
+        <EditText
+            app:layout_widthPercent="75%"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dfField"
+            android:layout_below="@id/tField"
+            android:hint="Degrees of Freedom"/>
+        <Button
+            app:layout_widthPercent="25%"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/dfField"
+            android:layout_toRightOf="@id/dfField"
+            android:id="@+id/computeButton"
+            android:text="Compute P-Value"
+            android:layout_below="@id/tField"/>
+    </android.support.percent.PercentRelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pLabel"
+        android:textSize="20dp"
+        android:layout_below="@id/inputPanel"
+        android:layout_margin="30px"
+        android:text="P-Value here"
+        android:textAlignment="viewEnd"/>
+</RelativeLayout>
