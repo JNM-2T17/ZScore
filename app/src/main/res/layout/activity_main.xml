@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="30sp"
-        android:text="Probability Distribution Toolkit"
+        android:text="@string/app_name"
         android:textAlignment="center"
         android:layout_margin="10dp"/>
     <ScrollView
@@ -27,50 +27,58 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/pValueButton"
-                android:text="Compute p-values (Normal)"
-                android:layout_margin="5dp"/>
+                android:text="@string/pValueZMainButton"
+                android:layout_margin="5dp"
+                android:padding="5dp"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/zScoreButton"
-                android:text="Compute z-scores"
-                android:layout_margin="5dp"/>
+                android:text="@string/zScoreMainButton"
+                android:layout_margin="5dp"
+                android:padding="5dp"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/pValueTButton"
-                android:text="Compute p-values (t-distribution)"
-                android:layout_margin="5dp"/>
+                android:text="@string/pValueTMainButton"
+                android:layout_margin="5dp"
+                android:padding="5dp"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/tScoreButton"
-                android:text="Compute t-scores"
-                android:layout_margin="5dp"/>
+                android:text="@string/tScoreMainButton"
+                android:layout_margin="5dp"
+                android:padding="5dp"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/pValueX2Button"
-                android:text="Compute p-values (chi-square distribution)"
-                android:layout_margin="5dp"/>
+                android:text="@string/pValueX2MainButton"
+                android:layout_margin="5dp"
+                android:padding="5dp"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/x2Button"
-                android:text="Compute X2 values"
-                android:layout_margin="5dp"/>
+                android:text="@string/x2ValueMainButton"
+                android:layout_margin="5dp"
+                android:padding="5dp"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/pValueFButton"
-                android:text="Compute p-values (F-square distribution)"
-                android:layout_margin="5dp"/>
+                android:text="@string/pValueFMainButton"
+                android:layout_margin="5dp"
+                android:padding="5dp"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/fButton"
-                android:text="Compute F Values"
-                android:layout_margin="5dp"/>
+                android:text="@string/fValueMainButton"
+                android:layout_margin="5dp"
+                android:padding="5dp"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

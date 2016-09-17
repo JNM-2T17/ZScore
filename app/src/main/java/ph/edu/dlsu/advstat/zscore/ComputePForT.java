@@ -67,11 +67,8 @@ public class ComputePForT extends AppCompatActivity {
                     try {
                         double df = Integer.parseInt(dfField.getText().toString());
                         if( df < 1 ) {
-                            Toast.makeText(getBaseContext(),"Please input a non-negative integer for the degrees of freedom.",
+                            Toast.makeText(getBaseContext(),getString(R.string.dfError),
                                     Toast.LENGTH_LONG).show();
-//                        } else if( df < 3 ) {
-//                            Toast.makeText(getBaseContext(),"df < 3 is not yet supported.",
-//                                    Toast.LENGTH_LONG).show();
                         } else {
                             double p = 0;
                             switch (testType) {
@@ -85,17 +82,18 @@ public class ComputePForT extends AppCompatActivity {
                                     p = TScore.computeP(t > 0 ? -t : t, df) * 2;
                                     break;
                                 default:
-                                    Toast.makeText(getBaseContext(), "Invalid test type.",
+                                    Toast.makeText(getBaseContext(), getString(R.string.testTypeError),
                                             Toast.LENGTH_LONG).show();
                             }
-                            pLabel.setText(p + "");
+                            pLabel.setText(getString(R.string.value,p));
                         }
                     } catch(NumberFormatException nfe) {
-                        Toast.makeText(getBaseContext(),"Please input a non-negative integer for the degrees of freedom.",
+                        Toast.makeText(getBaseContext(),getString(R.string.dfError),
                                 Toast.LENGTH_LONG).show();
                     }
                 } catch(NumberFormatException nfe) {
-                    Toast.makeText(getBaseContext(),"Please input a number for the z-score.",
+                    Toast.makeText(getBaseContext(),
+                            String.format(getString(R.string.numberFormatError),"t-score"),
                             Toast.LENGTH_LONG).show();
                 }
 

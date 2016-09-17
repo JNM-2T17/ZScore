@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Compute X2-Value"
+        android:text="@string/x2ValueHeader"
         android:id="@+id/headerLabel"
         android:textAlignment="center"
         android:textSize="28sp"/>
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/pField"
         android:layout_below="@id/headerLabel"
-        android:hint="P-Value"
+        android:hint="@string/pValue"
         android:inputType="numberDecimal"/>
     <android.support.percent.PercentRelativeLayout
         android:orientation="vertical"
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/dfField"
             android:layout_below="@id/pField"
-            android:hint="Degrees of Freedom"
+            android:hint="@string/df"
             android:inputType="number"/>
         <Button
             app:layout_widthPercent="40%"
@@ -44,7 +44,7 @@
             android:layout_toEndOf="@id/dfField"
             android:layout_toRightOf="@id/dfField"
             android:id="@+id/computeButton"
-            android:text="Compute&#10;X2-Value"
+            android:text="@string/x2ValueButton"
             android:layout_below="@id/pField"/>
     </android.support.percent.PercentRelativeLayout>
     <TextView
@@ -54,6 +54,6 @@
         android:textSize="20sp"
         android:layout_below="@id/inputPanel"
         android:layout_margin="10dp"
-        android:text="X2-Value here"
+        android:text="@string/x2ValueLabel"
         android:textAlignment="viewEnd"/>
 </RelativeLayout>

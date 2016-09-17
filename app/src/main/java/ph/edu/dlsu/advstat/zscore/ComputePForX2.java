@@ -32,22 +32,23 @@ public class ComputePForX2 extends AppCompatActivity {
                     try {
                         double df = Integer.parseInt(dfField.getText().toString());
                         if( df < 1 ) {
-                            Toast.makeText(getBaseContext(), "Please input a non-negative integer for the degrees of freedom.",
+                            Toast.makeText(getBaseContext(), getString(R.string.dfError),
                                     Toast.LENGTH_LONG).show();
                         } else if( df < 2 && x2 > 100 ) {
-                            Toast.makeText(getBaseContext(), "x2 > 100 is not supported for df = 1.",
+                            Toast.makeText(getBaseContext(), getString(R.string.dfRangeError),
                                     Toast.LENGTH_LONG).show();
                         } else {
                             double p = 0;
                             p = ChiSquare.computeP(x2, df);
-                            pLabel.setText(p + "");
+                            pLabel.setText(getString(R.string.value,p));
                         }
                     } catch(NumberFormatException nfe) {
-                        Toast.makeText(getBaseContext(),"Please input a non-negative integer for the degrees of freedom.",
+                        Toast.makeText(getBaseContext(),getString(R.string.dfError),
                                 Toast.LENGTH_LONG).show();
                     }
                 } catch(NumberFormatException nfe) {
-                    Toast.makeText(getBaseContext(),"Please input a number for the z-score.",
+                    Toast.makeText(getBaseContext(),
+                            String.format(getString(R.string.numberFormatError),"X2-value"),
                             Toast.LENGTH_LONG).show();
                 }
 

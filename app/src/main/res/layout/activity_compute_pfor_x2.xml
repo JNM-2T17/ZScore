@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Compute P-Values"
+        android:text="@string/pValueHeader"
         android:id="@+id/headerLabel"
         android:textAlignment="center"
         android:textSize="28sp"/>
@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:text="(Chi-Squared Distribution)"
+        android:text="@string/x2ValueDist"
         android:id="@+id/distLabel"
         android:textSize="25sp"
         android:layout_below="@id/headerLabel"/>
@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/x2Field"
         android:layout_below="@id/distLabel"
-        android:hint="X2 value"
+        android:hint="@string/x2Value"
         android:inputType="numberDecimal"/>
     <android.support.percent.PercentRelativeLayout
         android:orientation="vertical"
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/dfField"
             android:layout_below="@id/tField"
-            android:hint="Degrees of Freedom"
+            android:hint="@string/df"
             android:inputType="number"/>
         <Button
             app:layout_widthPercent="40%"
@@ -52,7 +52,7 @@
             android:layout_toEndOf="@id/dfField"
             android:layout_toRightOf="@id/dfField"
             android:id="@+id/computeButton"
-            android:text="Compute&#10;P-Value"
+            android:text="@string/pValueButton"
             android:layout_below="@id/tField"/>
     </android.support.percent.PercentRelativeLayout>
     <TextView
@@ -62,6 +62,6 @@
         android:textSize="20sp"
         android:layout_below="@id/inputPanel"
         android:layout_margin="10dp"
-        android:text="P-Value here"
+        android:text="@string/pValueLabel"
         android:textAlignment="viewEnd"/>
 </RelativeLayout>

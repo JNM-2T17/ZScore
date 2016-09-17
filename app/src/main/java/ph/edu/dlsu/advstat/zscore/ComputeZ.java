@@ -64,7 +64,7 @@ public class ComputeZ extends AppCompatActivity {
                 try {
                     double p = Double.parseDouble(pField.getText().toString());
                     if( p < 0 || p > 1 ) {
-                        Toast.makeText(getBaseContext(),"Please input a number between 0 and 1.",
+                        Toast.makeText(getBaseContext(),getString(R.string.pValueError),
                                 Toast.LENGTH_LONG).show();
                     } else {
                         double z = 0;
@@ -79,14 +79,15 @@ public class ComputeZ extends AppCompatActivity {
                                 z = ZScore.computeZ(p / 2.0);
                                 break;
                             default:
-                                Toast.makeText(getBaseContext(), "Invalid test type.",
+                                Toast.makeText(getBaseContext(), getString(R.string.testTypeError),
                                         Toast.LENGTH_LONG).show();
                         }
-//                        Log.i("ComputeZ:", "p = " + p + ", z = " + z);
-                        zLabel.setText(z + " to \n" + (testType == TWO_TAIL ? -z : ""));
+                        zLabel.setText(testType == TWO_TAIL ?
+                                String.format(getString(R.string.range),z,-z) :
+                                getString(R.string.value,z));
                     }
                 } catch(NumberFormatException nfe) {
-                    Toast.makeText(getBaseContext(),"Please input a number between 0 and 1.",
+                    Toast.makeText(getBaseContext(),getString(R.string.pValueError),
                             Toast.LENGTH_LONG).show();
                 }
             }

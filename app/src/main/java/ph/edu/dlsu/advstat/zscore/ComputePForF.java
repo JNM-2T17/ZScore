@@ -34,7 +34,7 @@ public class ComputePForF extends AppCompatActivity {
                     try {
                         double df = Integer.parseInt(df1Field.getText().toString());
                         if (df < 1) {
-                            Toast.makeText(getBaseContext(), "Please input a non-negative integer for the degrees of freedom.",
+                            Toast.makeText(getBaseContext(), getString(R.string.dfError),
                                     Toast.LENGTH_LONG).show();
                         } else if (df < 2) {
                             Toast.makeText(getBaseContext(), "df < 2 is not supported.",
@@ -43,27 +43,28 @@ public class ComputePForF extends AppCompatActivity {
                             try {
                                 double df2 = Integer.parseInt(df2Field.getText().toString());
                                 if( df2 < 1) {
-                                    Toast.makeText(getBaseContext(), "Please input a non-negative integer for the degrees of freedom.",
+                                    Toast.makeText(getBaseContext(), getString(R.string.dfError),
                                             Toast.LENGTH_LONG).show();
                                 } else if( df2 < 2) {
-                                    Toast.makeText(getBaseContext(), "df < 2 is not supported.",
+                                    Toast.makeText(getBaseContext(), getString(R.string.df2Error),
                                             Toast.LENGTH_LONG).show();
                                 } else {
                                     double p = 0;
                                     p = FScore.computeP(f, df, df2);
-                                    pLabel.setText(p + "");
+                                    pLabel.setText(getString(R.string.value,p));
                                 }
                             } catch(NumberFormatException nfe) {
-                                Toast.makeText(getBaseContext(), "Please input a non-negative integer for the degrees of freedom.",
+                                Toast.makeText(getBaseContext(), getString(R.string.dfError),
                                         Toast.LENGTH_LONG).show();
                             }
                         }
                     } catch (NumberFormatException nfe) {
-                        Toast.makeText(getBaseContext(), "Please input a non-negative integer for the degrees of freedom.",
+                        Toast.makeText(getBaseContext(), getString(R.string.dfError),
                                 Toast.LENGTH_LONG).show();
                     }
                 } catch (NumberFormatException nfe) {
-                    Toast.makeText(getBaseContext(), "Please input a number for the z-score.",
+                    Toast.makeText(getBaseContext(),
+                            String.format(getString(R.string.numberFormatError),"f-value"),
                             Toast.LENGTH_LONG).show();
                 }
 

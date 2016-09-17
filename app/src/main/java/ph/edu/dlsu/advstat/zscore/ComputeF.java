@@ -31,43 +31,43 @@ public class ComputeF extends AppCompatActivity {
                 try {
                     double p = Double.parseDouble(pField.getText().toString());
                     if (p < 0 || p > 1) {
-                        Toast.makeText(getBaseContext(), "Please input a number between 0 and 1.",
+                        Toast.makeText(getBaseContext(), getString(R.string.pValueError),
                                 Toast.LENGTH_LONG).show();
                     } else {
                         try {
                             double df = Integer.parseInt(df1Field.getText().toString());
                             if (df < 1) {
-                                Toast.makeText(getBaseContext(), "Please input a non-negative integer for the degrees of freedom.",
+                                Toast.makeText(getBaseContext(), getString(R.string.dfError),
                                         Toast.LENGTH_LONG).show();
                             } else if( df < 2 ) {
-                                Toast.makeText(getBaseContext(),"df < 2 not supported.",
+                                Toast.makeText(getBaseContext(),getString(R.string.df2Error),
                                         Toast.LENGTH_LONG).show();
                             } else {
                                 try {
                                     double df2 = Integer.parseInt(df2Field.getText().toString());
                                     if( df2 < 1 ) {
-                                        Toast.makeText(getBaseContext(), "Please input a non-negative integer for the degrees of freedom.",
+                                        Toast.makeText(getBaseContext(), getString(R.string.dfError),
                                                 Toast.LENGTH_LONG).show();
                                     } else if( df2 < 1 ) {
-                                        Toast.makeText(getBaseContext(),"df < 2 not supported.",
+                                        Toast.makeText(getBaseContext(),getString(R.string.df2Error),
                                                 Toast.LENGTH_LONG).show();
                                     } else {
-                                        double x2 = 0;
-                                        x2 = FScore.computeF(p, df,df2);
-                                        fLabel.setText(x2 + "");
+                                        double f = 0;
+                                        f = FScore.computeF(p, df,df2);
+                                        fLabel.setText(getString(R.string.value,f));
                                     }
                                 } catch(NumberFormatException nfe) {
-                                    Toast.makeText(getBaseContext(), "Please input a non-negative integer for the degrees of freedom.",
+                                    Toast.makeText(getBaseContext(), getString(R.string.dfError),
                                             Toast.LENGTH_LONG).show();
                                 }
                             }
                         } catch (NumberFormatException nfe) {
-                            Toast.makeText(getBaseContext(), "Please input a non-negative integer for the degrees of freedom.",
+                            Toast.makeText(getBaseContext(), getString(R.string.dfError),
                                     Toast.LENGTH_LONG).show();
                         }
                     }
                 } catch (NumberFormatException nfe) {
-                    Toast.makeText(getBaseContext(), "Please input a number between 0 and 1.",
+                    Toast.makeText(getBaseContext(), getString(R.string.pValueError),
                             Toast.LENGTH_LONG).show();
                 }
             }

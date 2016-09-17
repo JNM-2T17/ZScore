@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Compute P-Values"
+        android:text="@string/pValueHeader"
         android:id="@+id/headerLabel"
         android:textAlignment="center"
         android:textSize="28sp"/>
@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:text="(t-Distribution)"
+        android:text="@string/tScoreDist"
         android:id="@+id/distLabel"
         android:textSize="25sp"
         android:layout_below="@id/headerLabel"/>
@@ -33,24 +33,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/leftTailRadio"
-            android:text="Left-Tailed Test"/>
+            android:text="@string/testLeft"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/rightTailRadio"
-            android:text="Right-Tailed Test"/>
+            android:text="@string/testRight"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/twoTailRadio"
-            android:text="Two-Tailed Test"/>
+            android:text="@string/testTwo"/>
     </RadioGroup>
     <EditText
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:id="@+id/tField"
         android:layout_below="@id/buttonGroup"
-        android:hint="T-Score"
+        android:hint="@string/tScore"
         android:inputType="numberSigned|numberDecimal"/>
     <android.support.percent.PercentRelativeLayout
         android:orientation="vertical"
@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/dfField"
             android:layout_below="@id/tField"
-            android:hint="Degrees of Freedom"
+            android:hint="@string/df"
             android:inputType="number"/>
         <Button
             app:layout_widthPercent="40%"
@@ -73,7 +73,7 @@
             android:layout_toEndOf="@id/dfField"
             android:layout_toRightOf="@id/dfField"
             android:id="@+id/computeButton"
-            android:text="Compute&#10;P-Value"
+            android:text="@string/pValueButton"
             android:layout_below="@id/tField"/>
     </android.support.percent.PercentRelativeLayout>
     <TextView
@@ -83,6 +83,6 @@
         android:textSize="20sp"
         android:layout_below="@id/inputPanel"
         android:layout_margin="10dp"
-        android:text="P-Value here"
+        android:text="@string/pValueLabel"
         android:textAlignment="viewEnd"/>
 </RelativeLayout>

@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Compute Z-Score"
+        android:text="@string/zScoreHeader"
         android:id="@+id/headerLabel"
         android:textAlignment="center"
         android:textSize="28sp"/>
@@ -25,17 +25,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/leftTailRadio"
-            android:text="Left-Tailed Test"/>
+            android:text="@string/testLeft"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/rightTailRadio"
-            android:text="Right-Tailed Test"/>
+            android:text="@string/testRight"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/twoTailRadio"
-            android:text="Two-Tailed Test"/>
+            android:text="@string/testTwo"/>
     </RadioGroup>
     <android.support.percent.PercentRelativeLayout
         android:orientation="vertical"
@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/pField"
             android:layout_below="@id/buttonGroup"
-            android:hint="p-Value"
+            android:hint="@string/pValue"
             android:inputType="numberDecimal"/>
         <Button
             app:layout_widthPercent="40%"
@@ -58,7 +58,7 @@
             android:layout_toEndOf="@id/pField"
             android:layout_toRightOf="@id/pField"
             android:id="@+id/computeButton"
-            android:text="Compute&#10;Z-Score"
+            android:text="@string/zScoreButton"
             android:layout_below="@id/buttonGroup"/>
     </android.support.percent.PercentRelativeLayout>
     <TextView
@@ -68,6 +68,6 @@
         android:id="@+id/zLabel"
         android:layout_below="@id/inputPanel"
         android:layout_margin="10dp"
-        android:text="Z-Score here"
+        android:text="@string/zScoreLabel"
         android:textAlignment="viewEnd"/>
 </RelativeLayout>

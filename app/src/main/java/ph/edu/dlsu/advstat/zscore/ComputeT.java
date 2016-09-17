@@ -66,17 +66,14 @@ public class ComputeT extends AppCompatActivity {
                 try {
                     double p = Double.parseDouble(pField.getText().toString());
                     if( p < 0 || p > 1 ) {
-                        Toast.makeText(getBaseContext(), "Please input a number between 0 and 1.",
+                        Toast.makeText(getBaseContext(), getString(R.string.pValueError),
                                 Toast.LENGTH_LONG).show();
                     } else {
                         try {
                             double df = Integer.parseInt(dfField.getText().toString());
                             if( df < 1 ) {
-                                Toast.makeText(getBaseContext(),"Please input a non-negative integer for the degrees of freedom.",
+                                Toast.makeText(getBaseContext(),getString(R.string.dfError),
                                         Toast.LENGTH_LONG).show();
-//                            } else if( df < 3 ) {
-//                                Toast.makeText(getBaseContext(),"df < 3 is not yet supported.",
-//                                        Toast.LENGTH_LONG).show();
                             } else {
                                 double t = 0;
                                 switch (testType) {
@@ -90,19 +87,22 @@ public class ComputeT extends AppCompatActivity {
                                         t = TScore.computeT(p / 2.0,df);
                                         break;
                                     default:
-                                        Toast.makeText(getBaseContext(), "Invalid test type.",
+                                        Toast.makeText(getBaseContext(),
+                                                getString(R.string.testTypeError),
                                                 Toast.LENGTH_LONG).show();
                                 }
 //                                Log.i("ComputeT:", "p = " + p + ", t = " + t);
-                                tLabel.setText(t + " to \n" + (testType == TWO_TAIL ? -t : ""));
+                                tLabel.setText(testType == TWO_TAIL ?
+                                                String.format(getString(R.string.range),t,-t) :
+                                        getString(R.string.value,t));
                             }
                         } catch(NumberFormatException nfe) {
-                            Toast.makeText(getBaseContext(),"Please input a non-negative integer for the degrees of freedom.",
+                            Toast.makeText(getBaseContext(),getString(R.string.dfError),
                                     Toast.LENGTH_LONG).show();
                         }
                     }
                 } catch(NumberFormatException nfe) {
-                    Toast.makeText(getBaseContext(),"Please input a number between 0 and 1.",
+                    Toast.makeText(getBaseContext(),getString(R.string.pValueError),
                             Toast.LENGTH_LONG).show();
                 }
             }

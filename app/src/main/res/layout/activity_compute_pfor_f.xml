@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Compute P-Values"
+        android:text="@string/pValueHeader"
         android:id="@+id/headerLabel"
         android:textAlignment="center"
         android:textSize="28sp"/>
@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:text="(F-Distribution)"
+        android:text="@string/fValueDist"
         android:id="@+id/distLabel"
         android:textSize="25sp"
         android:layout_below="@id/headerLabel"/>
@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/fField"
-            android:hint="F-Value"
+            android:hint="@string/fValue"
             android:inputType="numberDecimal"/>
         <EditText
             app:layout_widthPercent="50%"
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/df1Field"
             android:layout_toRightOf="@id/fField"
-            android:hint="df Numerator"
+            android:hint="@string/dfN"
             android:inputType="number"/>
     </android.support.percent.PercentRelativeLayout>
     <android.support.percent.PercentRelativeLayout
@@ -56,7 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/df2Field"
-            android:hint="df Denominator"
+            android:hint="@string/dfD"
             android:inputType="number"/>
         <Button
             app:layout_widthPercent="40%"
@@ -65,7 +65,7 @@
             android:layout_toEndOf="@id/df2Field"
             android:layout_toRightOf="@id/df2Field"
             android:id="@+id/computeButton"
-            android:text="Compute&#10;P-Value"/>
+            android:text="@string/pValueButton"/>
     </android.support.percent.PercentRelativeLayout>
     <TextView
         android:layout_width="match_parent"
@@ -74,6 +74,6 @@
         android:textSize="20sp"
         android:layout_below="@id/inputPanel"
         android:layout_margin="10dp"
-        android:text="P-Value here"
+        android:text="@string/pValueLabel"
         android:textAlignment="viewEnd"/>
 </RelativeLayout>
