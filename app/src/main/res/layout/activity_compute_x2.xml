@@ -44,7 +44,7 @@
             android:layout_toEndOf="@id/dfField"
             android:layout_toRightOf="@id/dfField"
             android:id="@+id/computeButton"
-            android:text="Compute X2-Value"
+            android:text="Compute&#10;X2-Value"
             android:layout_below="@id/pField"/>
     </android.support.percent.PercentRelativeLayout>
     <TextView

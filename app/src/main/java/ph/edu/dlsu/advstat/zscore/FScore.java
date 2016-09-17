@@ -100,9 +100,13 @@ public class FScore {
     }
 
     private static double betaPrime(double x,double a,double b) {
-        if( Math.abs(x) < 0.00001 || Math.abs(x - 1) < 0.0001) {
+        if( Math.abs(x) < 0.00001) {
             x = 1e-5;
         }
+        if(Math.abs(x - 1) < 0.0001) {
+            x = 1 - 1e-5;
+        }
+
         return Math.pow(x,a - 1) * Math.pow(1 - x, b - 1);
     }
 

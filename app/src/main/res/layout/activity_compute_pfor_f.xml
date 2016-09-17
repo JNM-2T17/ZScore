@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:text="(F-distribution)"
+        android:text="(F-Distribution)"
         android:id="@+id/distLabel"
         android:textSize="25sp"
         android:layout_below="@id/headerLabel"/>
@@ -65,7 +65,7 @@
             android:layout_toEndOf="@id/df2Field"
             android:layout_toRightOf="@id/df2Field"
             android:id="@+id/computeButton"
-            android:text="Compute P-Value"/>
+            android:text="Compute&#10;P-Value"/>
     </android.support.percent.PercentRelativeLayout>
     <TextView
         android:layout_width="match_parent"

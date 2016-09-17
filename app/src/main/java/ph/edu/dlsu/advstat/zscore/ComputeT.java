@@ -94,7 +94,7 @@ public class ComputeT extends AppCompatActivity {
                                                 Toast.LENGTH_LONG).show();
                                 }
 //                                Log.i("ComputeT:", "p = " + p + ", t = " + t);
-                                tLabel.setText(t + "" + (testType == TWO_TAIL ? -t : ""));
+                                tLabel.setText(t + " to \n" + (testType == TWO_TAIL ? -t : ""));
                             }
                         } catch(NumberFormatException nfe) {
                             Toast.makeText(getBaseContext(),"Please input a non-negative integer for the degrees of freedom.",

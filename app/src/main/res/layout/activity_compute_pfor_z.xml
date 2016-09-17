@@ -12,15 +12,23 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Compute P-Values(Normal)"
+        android:text="Compute P-Values"
         android:id="@+id/headerLabel"
         android:textAlignment="center"
         android:textSize="28sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="(Normal Distribution)"
+        android:id="@+id/distLabel"
+        android:textSize="25sp"
+        android:layout_below="@id/headerLabel"/>
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/buttonGroup"
-        android:layout_below="@id/headerLabel">
+        android:layout_below="@id/distLabel">
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -58,7 +66,7 @@
             android:layout_toEndOf="@id/zField"
             android:layout_toRightOf="@id/zField"
             android:id="@+id/computeButton"
-            android:text="Compute P-Value"
+            android:text="Compute&#10;P-Value"
             android:layout_below="@id/buttonGroup"/>
     </android.support.percent.PercentRelativeLayout>
     <TextView

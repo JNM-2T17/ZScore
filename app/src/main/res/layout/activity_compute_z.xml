@@ -58,7 +58,7 @@
             android:layout_toEndOf="@id/pField"
             android:layout_toRightOf="@id/pField"
             android:id="@+id/computeButton"
-            android:text="Compute Z-Score"
+            android:text="Compute&#10;Z-Score"
             android:layout_below="@id/buttonGroup"/>
     </android.support.percent.PercentRelativeLayout>
     <TextView

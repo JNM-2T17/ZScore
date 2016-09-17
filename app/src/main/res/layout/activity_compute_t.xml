@@ -65,7 +65,7 @@
             android:layout_toEndOf="@id/dfField"
             android:layout_toRightOf="@id/dfField"
             android:id="@+id/computeButton"
-            android:text="Compute T-Score"
+            android:text="Compute&#10;T-Score"
             android:layout_below="@id/pField"/>
     </android.support.percent.PercentRelativeLayout>
     <TextView

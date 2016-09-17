@@ -58,7 +58,7 @@
             android:layout_toEndOf="@id/df2Field"
             android:layout_toRightOf="@id/df2Field"
             android:id="@+id/computeButton"
-            android:text="Compute F-Value"
+            android:text="Compute&#10;F-Value"
             android:layout_below="@id/pField"/>
     </android.support.percent.PercentRelativeLayout>
     <TextView
