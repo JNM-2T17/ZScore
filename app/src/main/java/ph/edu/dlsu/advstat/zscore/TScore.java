@@ -4,11 +4,12 @@ package ph.edu.dlsu.advstat.zscore;
  * Created by ryana on 9/16/2016.
  */
 public class TScore {
+    private static boolean gammaOK = false;
     private static double gamma1 = 0;
     private static double gamma2 = 0;
 
     public static double computeP(double z,double df) {
-        gamma1 = gamma2 = 0;
+        gammaOK = false;
         if( Math.abs(z) < 0.0001) {
             return 0.5;
         } else if( z < 0 ) {
@@ -53,7 +54,7 @@ public class TScore {
     }
 
     public static double computeT(double pValue,double df) {
-        gamma1 = gamma2 = 0;
+        gammaOK = false;
         if( Math.abs(pValue - 0.5) < 0.00001) {
             return 0;
         } else if( pValue < 0.5) {
@@ -143,11 +144,10 @@ public class TScore {
             return Math.sqrt(108.0) / (Math.PI * Math.pow(3 + t * t,2));
         }
 
-        if( Math.abs(gamma1) < 0.0001 ) {
+        if( !gammaOK) {
             gamma1 = gamma((df + 1.0) / 2.0);
-        }
-        if( Math.abs(gamma2) < 0.0001) {
             gamma2 = gamma(df / 2.0);
+            gammaOK = true;
         }
 
         return gamma1/(Math.sqrt(df * Math.PI) * gamma2) *

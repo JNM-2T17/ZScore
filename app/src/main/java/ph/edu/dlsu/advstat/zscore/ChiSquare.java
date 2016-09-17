@@ -4,6 +4,7 @@ package ph.edu.dlsu.advstat.zscore;
  * Created by ryana on 9/16/2016.
  */
 public class ChiSquare {
+    private static boolean gammaOK = false;
     private static double gamma = 0;
 
     public static double computeP(double xsq,double df) {
@@ -13,38 +14,34 @@ public class ChiSquare {
             for(double i = xsq; i + h - 100 <= 0.00001; i += h) {
                 // System.out.println("x0 = " + i);
                 double x0 = i;
-                double x4 = i + h;
-                double dist = (x4 - x0) / 4.0;
+                double x3 = i + h;
+                double dist = (x3 - x0) / 3.0;
                 // System.out.println("dist = " + dist);
                 double x1 = x0 + dist;
                 double x2 = x1 + dist;
-                double x3 = x2 + dist;
-                double temp = 2 * dist / 45 *
-                        (7 * computeDensity(x0,df) + 32 * computeDensity(x1,df) +
-                                12 * computeDensity(x2,df) + 32 * computeDensity(x3,df)
-                                + 7 * computeDensity(x4,df));
+                double temp = 3 * dist / 8 *
+                        (computeDensity(x0,df) + 3 * computeDensity(x1,df) +
+                                3 * computeDensity(x2,df) + computeDensity(x3,df));
                 // System.out.println(temp);
                 area += temp;
             }
             return area;
         }
-        gamma = 0;
-        int partitions = (int)(xsq / (Math.abs(df - 1) < 0.0001 ? 0.000001 : 0.001));
+        gammaOK = false;
+        int partitions = (int)(xsq / 0.001);
         double h = xsq / partitions;
         double area = 1.0;
         for(double i = 0; i + h - xsq <= 0.00001; i += h) {
             // System.out.println("x0 = " + i);
             double x0 = i;
-            double x4 = i + h;
-            double dist = (x4 - x0) / 4.0;
+            double x3 = i + h;
+            double dist = (x3 - x0) / 3.0;
             // System.out.println("dist = " + dist);
             double x1 = x0 + dist;
             double x2 = x1 + dist;
-            double x3 = x2 + dist;
-            double temp = 2 * dist / 45 *
-                    (7 * computeDensity(x0,df) + 32 * computeDensity(x1,df) +
-                            12 * computeDensity(x2,df) + 32 * computeDensity(x3,df)
-                            + 7 * computeDensity(x4,df));
+            double temp = 3 * dist / 8 *
+                    (computeDensity(x0,df) + 3 * computeDensity(x1,df) +
+                            3 * computeDensity(x2,df) + computeDensity(x3,df));
             // System.out.println(temp);
             area -= temp;
         }
@@ -78,7 +75,7 @@ public class ChiSquare {
             }
             return area;
         }
-        gamma = 0;
+        gammaOK = false;
         double h = Math.abs(df - 1) < 0.0001 ? 0.000001 : 0.001;
         double area = 1.0;
         double runningDist = Math.abs(pValue - area);
@@ -90,7 +87,7 @@ public class ChiSquare {
             // System.out.println("dist = " + dist);
             double x1 = x0 + dist;
             double x2 = x1 + dist;
-            double temp = 0.375 * dist *
+            double temp = 3.0 * dist / 8.0 *
                     (computeDensity(x0,df) + 3 * (computeDensity(x1,df) +
                             computeDensity(x2,df)) + computeDensity(x3,df));
             // System.out.println(temp);
@@ -143,8 +140,9 @@ public class ChiSquare {
                 return Math.exp(-t / 2.0) / 2.0;
             }
 
-            if( Math.abs(gamma) < 0.0001 ) {
+            if( !gammaOK ) {
                 gamma = gamma(df / 2.0);
+                gammaOK = true;
             }
 
             return (Math.pow(t,df / 2.0 - 1) * Math.exp(-t / 2.0)) /

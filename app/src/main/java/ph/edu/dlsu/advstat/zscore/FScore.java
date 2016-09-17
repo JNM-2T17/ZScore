@@ -4,11 +4,12 @@ package ph.edu.dlsu.advstat.zscore;
  * Created by ryana on 9/16/2016.
  */
 public class FScore {
+    private static boolean betaOK = false;
     private static double beta = 0;
 
     public static double computeP(double f,double df, double df2) {
         if( Math.abs(df - 1) < 0.0001 || Math.abs(df2 - 1) < 0.00001) {
-            double h = 0.001;
+            double h = 0.01;
             double area = 0;
             for(double i = f; i + h - 7000 <= 0.00001; i += h) {
                 // System.out.println("x0 = " + i);
@@ -26,12 +27,12 @@ public class FScore {
             }
             return area;
         }
-        beta = 0;
+        betaOK = false;
         int partitions = (int)(f / 0.001);
         double h = f / partitions;
         double area = 1.0;
         for(double i = 0; i + h - f <= 0.00001; i += h) {
-            // System.out.println("x0 = " + i);
+            System.out.println("x0 = " + i);
             double x0 = i;
             double x3 = i + h;
             double dist = (x3 - x0) / 3.0;
@@ -49,7 +50,7 @@ public class FScore {
 
     public static double computeF(double pValue,double df,double df2) {
         if( Math.abs(df - 1) < 0.0001 || Math.abs(df2 - 1) < 0.00001) {
-            double h = 0.001;
+            double h = 0.01;
             double area = 0;
             double runningDist = Math.abs(pValue - area);
             for(double i = 7000 - h; i >= -0.00001; i -= h) {
@@ -74,7 +75,7 @@ public class FScore {
             }
             return area;
         }
-        beta = 0;
+        betaOK = false;
         double h = Math.abs(df - 1) < 0.0001 ? 0.000001 : 0.001;
         double area = 1.0;
         double runningDist = Math.abs(pValue - area);
@@ -103,10 +104,9 @@ public class FScore {
         if( Math.abs(x) < 0.00001) {
             x = 1e-5;
         }
-        if(Math.abs(x - 1) < 0.0001) {
+        if( Math.abs(x - 1) < 0.0001 ) {
             x = 1 - 1e-5;
         }
-
         return Math.pow(x,a - 1) * Math.pow(1 - x, b - 1);
     }
 
@@ -136,8 +136,9 @@ public class FScore {
 
     private static double computeDensity(double x,double d1,double d2) {
         if(x > 0.00001 ) {
-            if( Math.abs(beta) < 0.00001) {
+            if(!betaOK) {
                 beta = beta(d1/2.0,d2/2.0);
+                betaOK = true;
             }
             return Math.sqrt(Math.pow(d1 * x,d1) * Math.pow(d2,d2) /
                     Math.pow(d1 * x + d2,d1 + d2)) /
